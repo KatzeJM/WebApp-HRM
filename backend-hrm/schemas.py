@@ -2,7 +2,7 @@ from ext import db
 
 class Empleado(db.Model):
     __tablename__ = 'empleados'
-    id_empleado = db.Column(db.Integer, primary_key=True)
+    id_empleado = db.Column(db.Integer, primary_key=True, autoincrement=True)
     estado = db.Column(db.Boolean) 
     nombre = db.Column(db.String(200), nullable=False)
     apellido = db.Column(db.String(200), nullable=False)
@@ -18,13 +18,13 @@ class Empleado(db.Model):
 
 class Departamento(db.Model):
     __tablename__ = 'departamentos'
-    id_departamento = db.Column(db.Integer, primary_key=True)
+    id_departamento = db.Column(db.Integer, primary_key=True, autoincrement=True)
     departamento = db.Column(db.String(200), nullable=False)
     estado = db.Column(db.Boolean) 
 
 
 class Puesto(db.Model):
     __tablename__ = 'puestos'
-    id_puesto    = db.Column(db.Integer, primary_key=True)
+    id_puesto    = db.Column(db.Integer, primary_key=True, autoincrement=True)
     puesto = db.Column(db.String(200), nullable=False)
     estado = db.Column(db.Boolean) 
