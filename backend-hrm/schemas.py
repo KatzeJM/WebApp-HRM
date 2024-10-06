@@ -1,6 +1,4 @@
-from flask_sqlalchemy import SQLAlchemy
-
-db = SQLAlchemy()
+from ext import db
 
 class Empleado(db.Model):
     __tablename__ = 'empleados'
@@ -20,7 +18,6 @@ class Empleado(db.Model):
 
 class Departamento(db.Model):
     __tablename__ = 'departamentos'
-    
     id_departamento = db.Column(db.Integer, primary_key=True)
     departamento = db.Column(db.String(200), nullable=False)
     estado = db.Column(db.Boolean) 
@@ -28,7 +25,6 @@ class Departamento(db.Model):
 
 class Puesto(db.Model):
     __tablename__ = 'puestos'
-    
     id_puesto    = db.Column(db.Integer, primary_key=True)
     puesto = db.Column(db.String(200), nullable=False)
     estado = db.Column(db.Boolean) 
