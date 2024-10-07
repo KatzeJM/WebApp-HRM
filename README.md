@@ -7,15 +7,6 @@ Este proyecto es un sistema de gestión de recursos humanos que permite administ
 
 Esta sección describe el backend del proyecto.
 
-## Tabla de Contenidos
-
-- [Características](#características)
-- [Tecnologías Utilizadas](#tecnologías-utilizadas)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Endpoints de la API](#endpoints-de-la-api)
-
-
 ## Características
 - Gestión de empleados, incluyendo la creación, actualización y eliminación.
 - Gestión de departamentos y puestos de trabajo.
@@ -78,6 +69,53 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
      
    ```
+## Migraciones
+
+Las migraciones se utilizan para gestionar los cambios en la estructura de la base de datos de manera controlada y sistemática. A continuación se explica cómo utilizar las migraciones en este proyecto:
+
+### Instalación de Flask-Migrate
+
+Asegúrate de tener Flask-Migrate instalado. Puedes instalarlo usando pip:
+
+```bash
+pip install Flask-Migrate
+```
+
+### Inicialización de Migraciones
+
+Para inicializar el directorio de migraciones en tu proyecto, ejecuta el siguiente comando en la raíz del mismo:
+
+```bash
+flask db init
+```
+
+Esto creará una carpeta llamada `migrations` donde se almacenarán los archivos de migración.
+
+### Creación de una Nueva Migración
+
+Cada vez que realices cambios en tus modelos (como agregar, eliminar o modificar columnas), necesitarás crear una nueva migración. Para ello, usa el siguiente comando:
+
+```bash
+flask db migrate -m "Descripción de la migración"
+```
+
+Reemplaza `"Descripción de la migración"` con un mensaje que describa los cambios realizados.
+
+### Aplicar Migraciones a la Base de Datos
+
+Una vez que hayas creado la migración, necesitarás aplicarla a la base de datos ejecutando:
+
+```bash
+flask db upgrade
+```
+
+Esto actualizará la base de datos para que coincida con los cambios definidos en la migración más reciente.
+
+
+### Notas
+
+Asegúrate de que la conexión a la base de datos esté correctamente configurada en tu aplicación antes de realizar estas operaciones. Las migraciones son una parte esencial del desarrollo, ya que permiten mantener la integridad de la base de datos a medida que el modelo evoluciona.
+
 
 ## Uso
 
