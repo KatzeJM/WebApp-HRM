@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_migrate import Migrate
 from ext import db,api
-from api_resources import nameSpace
+from api_resources import empleadoNS, departamentoNS, puestoNS
 
 
 app = Flask(__name__)
@@ -13,7 +13,11 @@ db.init_app(app)
 migrate = Migrate(app, db)
 
 api.init_app(app)
-api.add_namespace(nameSpace)
+#api.add_namespace(nameSpace)
+
+api.add_namespace(empleadoNS)
+api.add_namespace(departamentoNS)
+api.add_namespace(puestoNS)
 
 if __name__ == '__main__':
     app.run(debug=True)
