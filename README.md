@@ -160,7 +160,7 @@ Descripción del frontend, incluyendo la tecnología utilizada y la estructura.
 
 ### Requisitos - - Coming Soon
 
-Lista de requisitos para el frontend, si es diferente a los del backend.
+Lista de requisitos.
 
 ### Instalación - - Coming Soon
 
@@ -168,4 +168,4 @@ Pasos para instalar y ejecutar el frontend.
 
 ### Funcionalidades - - Coming Soon
 
-Lista de funcionalidades que ofrece el frontend.
+--
